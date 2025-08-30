@@ -2,68 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Weather & Disaster Alerts Design System */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
   :root {
-    /* Background & Surface Colors */
-    --background: 220 25% 98%;
-    --foreground: 220 15% 15%;
-    --surface: 220 20% 96%;
-    --surface-elevated: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    /* Weather Theme Colors */
-    --weather-primary: 220 90% 56%;
-    --weather-primary-light: 220 85% 70%;
-    --weather-secondary: 200 25% 45%;
-    --weather-accent: 195 100% 85%;
-
-    /* Alert System Colors */
-    --alert-low: 142 76% 36%;
-    --alert-medium: 43 96% 56%;
-    --alert-high: 0 84% 60%;
-    --alert-critical: 0 72% 50%;
-
-    /* Text & Interactive */
-    --text-primary: 220 15% 15%;
-    --text-secondary: 220 10% 45%;
-    --text-muted: 220 8% 65%;
-    --text-on-primary: 0 0% 100%;
-
-    /* Component Colors */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 90% 56%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    /* Legacy shadcn compatibility */
-    --primary: 220 90% 56%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 15% 92%;
-    --secondary-foreground: 220 15% 15%;
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 10% 45%;
-    --accent: 195 100% 85%;
-    --accent-foreground: 220 15% 15%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Design System Variables */
-    --radius: 0.75rem;
-    --shadow-sm: 0 1px 2px 0 hsl(220 20% 20% / 0.05);
-    --shadow: 0 4px 6px -1px hsl(220 20% 20% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(220 20% 20% / 0.1);
-    --shadow-weather: 0 8px 25px -5px hsl(220 90% 56% / 0.3);
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Gradients */
-    --gradient-weather: linear-gradient(135deg, hsl(220 90% 56%), hsl(195 100% 70%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 98%), hsl(195 100% 95%));
-    --gradient-alert-low: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 70% 45%));
-    --gradient-alert-medium: linear-gradient(135deg, hsl(43 96% 56%), hsl(43 90% 65%));
-    --gradient-alert-high: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 80% 70%));
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -127,118 +100,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-}
-
-@layer components {
-  /* Weather Component Styles */
-  .weather-card {
-    @apply bg-card border border-border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
-  }
-
-  .weather-gradient {
-    background: var(--gradient-weather);
-  }
-
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-
-  /* Alert Component Styles */
-  .alert-badge-low {
-    background: var(--gradient-alert-low);
-    @apply text-white font-medium px-3 py-1 rounded-full text-sm;
-  }
-
-  .alert-badge-medium {
-    background: var(--gradient-alert-medium);
-    @apply text-white font-medium px-3 py-1 rounded-full text-sm;
-  }
-
-  .alert-badge-high {
-    background: var(--gradient-alert-high);
-    @apply text-white font-medium px-3 py-1 rounded-full text-sm;
-  }
-
-  /* Animation Classes */
-  .fade-in {
-    @apply animate-[fadeIn_0.6s_ease-out];
-  }
-
-  .slide-up {
-    @apply animate-[slideUp_0.5s_ease-out];
-  }
-
-  .weather-icon-bounce {
-    @apply animate-[bounce_2s_infinite];
-  }
-}
-
-@layer utilities {
-  /* Custom Shadows */
-  .shadow-weather {
-    box-shadow: var(--shadow-weather);
-  }
-
-  /* Text Colors */
-  .text-weather-primary {
-    color: hsl(var(--weather-primary));
-  }
-
-  .text-weather-secondary {
-    color: hsl(var(--weather-secondary));
-  }
-
-  .text-alert-high {
-    color: hsl(var(--alert-high));
-  }
-
-  .text-alert-medium {
-    color: hsl(var(--alert-medium));
-  }
-
-  .text-alert-low {
-    color: hsl(var(--alert-low));
-  }
-
-  /* Background Colors */
-  .bg-weather-primary {
-    background-color: hsl(var(--weather-primary));
-  }
-
-  .bg-weather-accent {
-    background-color: hsl(var(--weather-accent));
-  }
-
-  .bg-surface {
-    background-color: hsl(var(--surface));
-  }
-
-  .bg-surface-elevated {
-    background-color: hsl(var(--surface-elevated));
-  }
-}
-
-/* Keyframes */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    @apply bg-background text-foreground;
   }
 }
